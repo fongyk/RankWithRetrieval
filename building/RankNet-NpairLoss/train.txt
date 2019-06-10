@@ -1,0 +1,11 @@
+/data4/fong/pytorch/RankNet/building/train/defense
+/data4/fong/pytorch/RankNet/building/train/eiffel
+/data4/fong/pytorch/RankNet/building/train/invalides
+/data4/fong/pytorch/RankNet/building/train/louvre
+/data4/fong/pytorch/RankNet/building/train/moulinrouge
+/data4/fong/pytorch/RankNet/building/train/museedorsay
+/data4/fong/pytorch/RankNet/building/train/notredame
+/data4/fong/pytorch/RankNet/building/train/pantheon
+/data4/fong/pytorch/RankNet/building/train/pompidou
+/data4/fong/pytorch/RankNet/building/train/sacrecoeur
+/data4/fong/pytorch/RankNet/building/train/triomphe
