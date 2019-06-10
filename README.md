@@ -19,6 +19,8 @@ triplet loss
 
 contrastive loss
 
+softmax loss
+
 n-pair loss (2016-Improved Deep Metric Learning with Multi-class N-pair Loss Objective-nips)
 
 
