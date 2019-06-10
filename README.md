@@ -13,7 +13,7 @@ Ukbench, Oxford5k, Parid6k, LFW face
 
 # losses
 
-ranknet loss (2005-Learning to rank using gradient descent-icml)
+RankNet loss (2005-Learning to rank using gradient descent-icml)
 
 triplet loss
 
