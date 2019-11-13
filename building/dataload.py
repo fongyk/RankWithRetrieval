@@ -45,11 +45,6 @@ class triTrainDataset(Dataset):
                 negative_img = negative + '/' + negative_folder[negative_id]
                 break
 
-        # print index
-        # print anchor_img
-        # print positive_img
-        # print negative_img
-
         anchor_img = Image.open(anchor_img)
         positive_img = Image.open(positive_img)
         negative_img = Image.open(negative_img)
@@ -335,11 +330,6 @@ class contrasTrainDataset(Dataset):
                     img1_id = random.randint(0, len(img1_folder)-1)
                     img1_img = img1 + '/' + img1_folder[img1_id]
                     break
-
-        # print index
-        # print label
-        # print img0_img
-        # print img1_img
 
         img0_img = Image.open(img0_img)
         img1_img = Image.open(img1_img)

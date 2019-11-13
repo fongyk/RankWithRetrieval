@@ -263,10 +263,7 @@ class tripletLoss(nn.Module):
         distance_positive = (anchor - positive).pow(2).sum(1)
         distance_negative = (anchor - negative).pow(2).sum(1)
         losses = F.relu(distance_positive - distance_negative + self.margin) * w
-        # print distance_positive.cpu()
-        # print distance_negative.cpu()
-        # print losses.cpu()
-        # sys.exit(1)
+
         return losses.mean() if size_average else losses.sum()
 
 class contrastiveLoss(nn.Module):
@@ -288,8 +285,7 @@ class contrastiveLoss(nn.Module):
         distances = (output1 - output2).pow(2).sum(1)
         # losses = 0.5 * (target.float() * distances + (1 - target).float() * F.relu(self.margin - distances.sqrt()).pow(2))
         losses = 0.5 * (target.float() * distances + (1 - target).float() * F.relu(self.margin - distances))
-        # print distances.size()
-        # print losses.size()
+
         return losses.mean() if size_average else losses.sum()
 
 

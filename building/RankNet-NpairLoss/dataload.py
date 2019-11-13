@@ -43,10 +43,6 @@ class triTrainDataset(Dataset):
                 negative_img = negative + '/' + negative_folder[negative_id]
                 break
 
-        # print index
-        # print anchor_img
-        # print positive_img
-        # print negative_img
 
         anchor_img = Image.open(anchor_img)
         positive_img = Image.open(positive_img)

@@ -13,8 +13,8 @@ import visdom
 from dataload import testDataset
 from train import evalIdentification
 
-img_testpath = '/data4/fong/face/LFW_face_dataset/lfw'
-testpairs_txt = '/data4/fong/face/LFW_face_dataset/pairs.txt'
+img_testpath = '/path/to/lfw'
+testpairs_txt = '/path/to/pairs.txt'
 img_transform = transforms.Compose([
     transforms.Scale((100, 100)),
     transforms.ToTensor(),

@@ -5,7 +5,7 @@ import subprocess
 import numpy as np
 
 def buildTrainData():
-    root_path = '/data4/fong/paris6k/class'
+    root_path = '/path/to/class'
     building_folder = os.listdir(root_path)
     building_folder.sort()
     with open('train.txt', 'w') as fw:
@@ -14,9 +14,9 @@ def buildTrainData():
             fw.write(source_path)
 
 def buildFineTrainData():
-    train_path = '/data4/fong/pytorch/RankNet/building/train'
-    img_path = '/data4/fong/paris6k/images'
-    gt_path = '/data4/fong/paris6k/paris_groundTruth'
+    train_path = '/path/to/train'
+    img_path = '/path/to/images'
+    gt_path = '/path/to/paris6k_groundTruth'
     gt_files = np.sort(os.listdir(gt_path))
     for f in gt_files:
         query = f.split('_')[0]

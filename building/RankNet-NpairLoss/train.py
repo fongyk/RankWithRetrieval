@@ -32,18 +32,18 @@ class Config():
     pair_num = 11 * 2000
 
     if test_dataset == 'oxf':
-        train_txt = '/data4/fong/pytorch/RankNet/building/train_oxf.txt'
-        img_testfolder = '/data4/fong/pytorch/RankNet/building/test_oxf'
-        img_testpath = '/data4/fong/pytorch/RankNet/building/test_oxf/images'
-        gt_path = '/data4/fong/oxford5k/oxford5k_groundTruth'
+        train_txt = '/path/to/train_oxf.txt'
+        img_testfolder = '/path/to/test_oxf'
+        img_testpath = '/path/to/images'
+        gt_path = '/path/to/oxford5k_groundTruth'
     if test_dataset == 'par':
-        train_txt = '/data4/fong/pytorch/RankNet/building/train_par.txt'
-        img_testfolder = '/data4/fong/pytorch/RankNet/building/test_par'
-        img_testpath = '/data4/fong/pytorch/RankNet/building/test_par/images'
-        gt_path = '/data4/fong/paris6k/paris_groundTruth'
+        train_txt = '/path/to/train_par.txt'
+        img_testfolder = '/path/to/test_par'
+        img_testpath = '/path/to/images'
+        gt_path = '/path/to/paris6k_groundTruth'
 
-    eval_func = '/data4/fong/oxford5k/evaluation/compute_ap'
-    retrieval_result = '/data4/fong/pytorch/RankNet/building/retrieval'
+    eval_func = '/path/to/compute_ap'
+    retrieval_result = '/path/to/retrieval'
 
     building = buildTestData(img_path=img_testpath, gt_path=gt_path, eval_func=eval_func)
 

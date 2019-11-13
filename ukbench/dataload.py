@@ -95,11 +95,6 @@ class myTriDataset_anchor(Dataset):
             if (img2_list[1].split('/'))[-1] != (img0_path.split('/'))[-1]:
                 break
 
-        # print index
-        # print img0_path
-        # print img1_path
-        # print img2_list[0]
-
         img0 = Image.open(img0_path)
         img1 = Image.open(img1_path)
         img2 = Image.open(img2_list[0])
@@ -137,10 +132,6 @@ class myTriDataset_random(Dataset):
             img2_list = linecache.getline(self.txt, random.randint(1, self.__len__())).strip('\n').split()
             if img2_list[1] != img0_list[1]:
                 break
-
-        # print img0_list[0]
-        # print img1_path
-        # print img2_list[0]
 
         img0 = Image.open(img0_list[0])
         img1 = Image.open(img1_path)

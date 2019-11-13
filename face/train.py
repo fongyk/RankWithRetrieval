@@ -26,11 +26,11 @@ class Config():
 
     pair_num = 10575 * 5
 
-    img_trainpath = '/data4/fong/face/CASIA_WebFace'
-    train_txt = '/data4/fong/pytorch/RankNet/face/train.txt'
-    img_testpath = '/data4/fong/face/LFW_face_dataset/lfw'
-    testpairs_txt = '/data4/fong/face/LFW_face_dataset/pairs.txt'
-    testpeople_txt = '/data4/fong/face/LFW_face_dataset/people.txt'
+    img_trainpath = '/path/to/CASIA_WebFace'
+    train_txt = '/path/to/train.txt'
+    img_testpath = '/path/to/lfw'
+    testpairs_txt = '/path/to/pairs.txt'
+    testpeople_txt = '/path/to/people.txt'
 
     img_transform = transforms.Compose([
         ## warning: if the dataloader is not customized,

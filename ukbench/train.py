@@ -23,12 +23,12 @@ from dataload import myTriDataset_random, myTriDataset_anchor, myContrasDataset
 class Config():
     ''' global parameters '''
 
-    anchorDir = '/data4/fong/pytorch/RankNet/ukbench/anchors'
+    anchorDir = '/path/to/anchors'
     pair_num = 6200 * 20
 
-    img_trainpath = '/data4/fong/pytorch/RankNet/ukbench/train'
-    train_txt = '/data4/fong/pytorch/RankNet/ukbench/train.txt'
-    img_testpath = '/data4/fong/pytorch/RankNet/ukbench/test'
+    img_trainpath = '/path/to/train'
+    train_txt = '/path/to/train.txt'
+    img_testpath = '/path/to/test'
 
     img_transform = transforms.Compose([
         transforms.Resize(480),

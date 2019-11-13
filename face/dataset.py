@@ -2,7 +2,7 @@ import os
 import shutil
 
 def buildTrainingFace():
-    face_path = '/data4/fong/face/CASIA_WebFace'
+    face_path = '/path/to/CASIA_WebFace'
     person_folder = os.listdir(face_path)
     person_folder.sort()
     ftrain = open('train.txt', 'w')
