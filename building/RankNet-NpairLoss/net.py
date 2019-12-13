@@ -239,10 +239,6 @@ class tripletLoss(nn.Module):
         distance_positive = (anchor - positive).pow(2).sum(1)
         distance_negative = (anchor - negative).pow(2).sum(1)
         losses = F.relu(distance_positive - distance_negative + self.margin)
-        # print distance_positive.cpu()
-        # print distance_negative.cpu()
-        # print losses.cpu()
-        # sys.exit(1)
         return losses.mean() if size_average else losses.sum()
 
 class NpairLoss(nn.Module):
