@@ -48,10 +48,6 @@ class Config():
     building = buildTestData(img_path=img_testpath, gt_path=gt_path, eval_func=eval_func)
 
     img_transform = transforms.Compose([
-        ## warning: if the dataloader is not customized,
-        ## images in one batch shoube be of the same size.
-
-        ## Scale(l): smaller edge of image will be matched to l
         transforms.Scale((480, 480)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
