@@ -4,8 +4,9 @@ from collections import OrderedDict
 import subprocess
 import numpy as np
 
+## training dataset: landmark_clean
 def buildTrainData():
-    root_path = '/path/to/class'
+    root_path = '/path/to/landmark_clean'
     building_folder = os.listdir(root_path)
     building_folder.sort()
     with open('train.txt', 'w') as fw:
@@ -13,6 +14,7 @@ def buildTrainData():
             source_path = root_path + '/' + building + '\n'
             fw.write(source_path)
 
+## cross training and evaluation: train[oxford5k, paris6k], test[paris6k, oxford5k]
 def buildFineTrainData(train_dataset):
     if train_dataset == 'par':
         train_path = '/path/to/train_oxf' ## evaluation on oxford5k
