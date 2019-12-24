@@ -43,7 +43,7 @@ python: 2.7.x
 
 - RankNet loss 
 
-  (2005-Learning to rank using gradient descent-icml)
+  2005-Learning to rank using gradient descent-icml
 
 - triplet loss
 
