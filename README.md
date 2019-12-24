@@ -9,18 +9,50 @@ python: 2.7.x
 
 # datasets
 
-Ukbench, Oxford5k, Parid6k, LFW face
+## testing
+
+- Ukbench
+
+  Scalable recognition with a vocabulary tree, cvpr 2006
+
+- Oxford5k
+
+  https://www.robots.ox.ac.uk/~vgg/data/oxbuildings/
+  
+- Parid6k
+
+  https://www.robots.ox.ac.uk/~vgg/data/parisbuildings/
+
+- LFW face
+
+  http://vis-www.cs.umass.edu/lfw/
+
+## training
+
+- landmark_clean
+
+  for Oxford5k & Parid6k
+
+  https://europe.naverlabs.com/Research/Computer-Vision/Learning-Visual-Representations/Deep-Image-Retrieval/
+
+- CASIA-Webface
+
+  for LFW face
 
 # losses
 
-RankNet loss (2005-Learning to rank using gradient descent-icml)
+- RankNet loss 
 
-triplet loss
+  (2005-Learning to rank using gradient descent-icml)
 
-contrastive loss
+- triplet loss
 
-softmax loss
+- contrastive loss
 
-n-pair loss (2016-Improved Deep Metric Learning with Multi-class N-pair Loss Objective-nips)
+- softmax loss
+
+- n-pair loss 
+
+  2016-Improved Deep Metric Learning with Multi-class N-pair Loss Objective-nips
 
 
