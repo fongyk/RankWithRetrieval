@@ -37,24 +37,23 @@ class Config():
 
     img_transform = transforms.Compose([
         transforms.Resize((480, 480)),
-        # transforms.Resize((160, 160)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
-    train_txt = '/data4/fong/pytorch/RankNet/building/train.txt'
-    eval_func = '/data4/fong/oxford5k/evaluation/compute_ap'
-    retrieval_result = '/data4/fong/pytorch/RankNet/building/retrieval'
+    train_txt = '/path/to/train.txt'
+    eval_func = '/path/to/compute_ap'
+    retrieval_result = '/path/to/retrieval'
     test_dataset = {
         'oxf': {
-            'img_testfolder': '/data4/fong/pytorch/RankNet/building/test_oxf',
-            'img_testpath': '/data4/fong/pytorch/RankNet/building/test_oxf/images',
-            'gt_path': '/data4/fong/oxford5k/oxford5k_groundTruth',
+            'img_testfolder': '/path/to/oxford5k',
+            'img_testpath': '/path/to/oxford5k/images',
+            'gt_path': '/path/to/oxford5k_groundTruth',
         },
         'par': {
-            'img_testfolder': '/data4/fong/pytorch/RankNet/building/test_par',
-            'img_testpath': '/data4/fong/pytorch/RankNet/building/test_par/images',
-            'gt_path': '/data4/fong/paris6k/paris_groundTruth',
+            'img_testfolder': '/path/to/paris6k',
+            'img_testpath': '/path/to/paris6k/images',
+            'gt_path': '/path/to/paris6k_groundTruth',
         }
     }
 
