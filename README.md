@@ -1,15 +1,15 @@
 # Rank With Retrieval
 image retrieval with different losses and datasets
 
-# requirements
+## requirements
 
 pytorch: 0.3.0
 
 python: 2.7.x
 
-# datasets
+## datasets
 
-## testing
+### testing
 
 - Ukbench
 
@@ -27,7 +27,7 @@ python: 2.7.x
 
   http://vis-www.cs.umass.edu/lfw/
 
-## training
+### training
 
 - landmark_clean
 
@@ -39,7 +39,7 @@ python: 2.7.x
 
   for LFW face
 
-# losses
+## losses
 
 - RankNet loss 
 
