@@ -55,4 +55,7 @@ python: 2.7.x
 
   2016-Improved Deep Metric Learning with Multi-class N-pair Loss Objective-nips
 
+- ap loss
+
+  Learning with Average Precision: Training Image Retrieval with a Listwise Loss, 2014, NeurIPS.
 
