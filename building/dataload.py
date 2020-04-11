@@ -45,22 +45,10 @@ class triTrainDataset(Dataset):
                 negative_img = negative + '/' + negative_folder[negative_id]
                 break
 
-        anchor_img = Image.open(anchor_img)
-        positive_img = Image.open(positive_img)
-        negative_img = Image.open(negative_img)
+        anchor_img = Image.open(anchor_img).convert('RGB')
+        positive_img = Image.open(positive_img).convert('RGB')
+        negative_img = Image.open(negative_img).convert('RGB')
 
-        if anchor_img.mode != "RGB":
-            origin = anchor_img
-            anchor_img = Image.new("RGB", origin.size)
-            anchor_img.paste(origin)
-        if positive_img.mode != "RGB":
-            origin = positive_img
-            positive_img = Image.new("RGB", origin.size)
-            positive_img.paste(origin)
-        if negative_img.mode != "RGB":
-            origin = negative_img
-            negative_img = Image.new("RGB", origin.size)
-            negative_img.paste(origin)
 
         if self.transform is not None:
             anchor_img = self.transform(anchor_img)
@@ -106,29 +94,13 @@ class triRotTrainDataset(Dataset):
                 negative_img = negative + '/' + negative_folder[negative_id]
                 break
 
-        anchor_img = Image.open(anchor_img)
-        positive_img = Image.open(positive_img)
-        negative_img = Image.open(negative_img)
-
-        if anchor_img.mode != "RGB":
-            origin = anchor_img
-            anchor_img = Image.new("RGB", origin.size)
-            anchor_img.paste(origin)
-        if positive_img.mode != "RGB":
-            origin = positive_img
-            positive_img = Image.new("RGB", origin.size)
-            positive_img.paste(origin)
-        if negative_img.mode != "RGB":
-            origin = negative_img
-            negative_img = Image.new("RGB", origin.size)
-            negative_img.paste(origin)
+        anchor_img = Image.open(anchor_img).convert('RGB')
+        positive_img = Image.open(positive_img).convert('RGB')
+        negative_img = Image.open(negative_img).convert('RGB')
 
         affine = transforms.RandomRotation((-60, 60))
         # affine = transforms.RandomAffine(degrees=60, translate=(0.1, 0.1), shear=30)
 
-        # anchor_img_1 = affine(anchor_img)
-        # positive_img_1 = affine(positive_img)
-        # negative_img_1 = affine(negative_img)
         anchor_img_1 = anchor_img
         positive_img_1 = positive_img
         negative_img_1 = negative_img
@@ -136,21 +108,6 @@ class triRotTrainDataset(Dataset):
         anchor_img_2 = affine(anchor_img)
         positive_img_2 = affine(positive_img)
         negative_img_2 = affine(negative_img)
-
-        # angle_1 = random.uniform(-30, 30)
-        # angle_2 = random.uniform(-30, 30)
-        # translate_1 = random.uniform(-20, 20)
-        # translate_2 = random.uniform(-20, 20)
-        # shear_1 = random.uniform(-30, 30)
-        # shear_2 = random.uniform(-30, 30)
-
-        # anchor_img_1 = tf.affine(anchor_img, angle=angle_1, translate=(translate_1, translate_1), scale=1.0, shear=shear_1)
-        # positive_img_1 = tf.affine(positive_img, angle=angle_1, translate=(translate_1, translate_1), scale=1.0, shear=shear_1)
-        # negative_img_1 = tf.affine(negative_img, angle=angle_1, translate=(translate_1, translate_1), scale=1.0, shear=shear_1)
-
-        # anchor_img_2 = tf.affine(anchor_img, angle=angle_2, translate=(translate_2, translate_2), scale=1.0, shear=shear_2)
-        # positive_img_2 = tf.affine(positive_img, angle=angle_2, translate=(translate_2, translate_2), scale=1.0, shear=shear_2)
-        # negative_img_2 = tf.affine(negative_img, angle=angle_2, translate=(translate_2, translate_2), scale=1.0, shear=shear_2)
 
         if self.transform is not None:
             anchor_img_1 = self.transform(anchor_img_1)
@@ -209,9 +166,9 @@ class triTrainDataset2(Dataset):
                     candidate_img = anchor + '/' + anchor_folder[candidate_id]
                     break
 
-        anchor_img = Image.open(anchor_img)
-        positive_img = Image.open(positive_img)
-        candidate_img = Image.open(candidate_img)
+        anchor_img = Image.open(anchor_img).convert('RGB')
+        positive_img = Image.open(positive_img).convert('RGB')
+        candidate_img = Image.open(candidate_img).convert('RGB')
 
         if self.transform is not None:
             anchor_img = self.transform(anchor_img)
@@ -261,22 +218,9 @@ class triSoftTrainDataset(Dataset):
                 negative_img = negative + '/' + negative_folder[negative_id]
                 break
 
-        anchor_img = Image.open(anchor_img)
-        positive_img = Image.open(positive_img)
-        negative_img = Image.open(negative_img)
-
-        if anchor_img.mode != "RGB":
-            origin = anchor_img
-            anchor_img = Image.new("RGB", origin.size)
-            anchor_img.paste(origin)
-        if positive_img.mode != "RGB":
-            origin = positive_img
-            positive_img = Image.new("RGB", origin.size)
-            positive_img.paste(origin)
-        if negative_img.mode != "RGB":
-            origin = negative_img
-            negative_img = Image.new("RGB", origin.size)
-            negative_img.paste(origin)
+        anchor_img = Image.open(anchor_img).convert('RGB')
+        positive_img = Image.open(positive_img).convert('RGB')
+        negative_img = Image.open(negative_img).convert('RGB')
 
         if self.transform is not None:
             anchor_img = self.transform(anchor_img)
@@ -331,17 +275,8 @@ class contrasTrainDataset(Dataset):
                     img1_img = img1 + '/' + img1_folder[img1_id]
                     break
 
-        img0_img = Image.open(img0_img)
-        img1_img = Image.open(img1_img)
-
-        if img0_img.mode != "RGB":
-            origin = img0_img
-            img0_img = Image.new("RGB", origin.size)
-            img0_img.paste(origin)
-        if img1_img.mode != "RGB":
-            origin = img1_img
-            img1_img = Image.new("RGB", origin.size)
-            img1_img.paste(origin)
+        img0_img = Image.open(img0_img).convert('RGB')
+        img1_img = Image.open(img1_img).convert('RGB')
 
         if self.transform is not None:
             img0_img = self.transform(img0_img)
