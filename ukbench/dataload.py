@@ -50,8 +50,8 @@ class myContrasDataset(Dataset):
         else:
             sample_2 = img1_path
 
-        sample_1 = Image.open(sample_1)
-        sample_2 = Image.open(sample_2)
+        sample_1 = Image.open(sample_1).convert('RGB')
+        sample_2 = Image.open(sample_2).convert('RGB')
 
         if self.transform is not None:
             sample_1 = self.transform(sample_1)
@@ -95,9 +95,9 @@ class myTriDataset_anchor(Dataset):
             if (img2_list[1].split('/'))[-1] != (img0_path.split('/'))[-1]:
                 break
 
-        img0 = Image.open(img0_path)
-        img1 = Image.open(img1_path)
-        img2 = Image.open(img2_list[0])
+        img0 = Image.open(img0_path).convert('RGB')
+        img1 = Image.open(img1_path).convert('RGB')
+        img2 = Image.open(img2_list[0]).convert('RGB')
 
         if self.transform is not None:
             img0 = self.transform(img0)
@@ -133,9 +133,9 @@ class myTriDataset_random(Dataset):
             if img2_list[1] != img0_list[1]:
                 break
 
-        img0 = Image.open(img0_list[0])
-        img1 = Image.open(img1_path)
-        img2 = Image.open(img2_list[0])
+        img0 = Image.open(img0_list[0]).convert('RGB')
+        img1 = Image.open(img1_path).convert('RGB')
+        img2 = Image.open(img2_list[0]).convert('RGB')
 
         if self.transform is not None:
             img0 = self.transform(img0)
