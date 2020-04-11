@@ -58,29 +58,9 @@ class triTrainDataset(Dataset):
                 break
 
 
-        anchor_face = Image.open(anchor_face)
-        positive_face = Image.open(positive_face)
-        negative_face = Image.open(negative_face)
-
-        if anchor_face.mode != "RGB":
-            origin = anchor_face
-            anchor_face = Image.new("RGB", origin.size)
-            anchor_face.paste(origin)
-        if positive_face.mode != "RGB":
-            origin = positive_face
-            positive_face = Image.new("RGB", origin.size)
-            positive_face.paste(origin)
-        if negative_face.mode != "RGB":
-            origin = negative_face
-            negative_face = Image.new("RGB", origin.size)
-            negative_face.paste(origin)
-
-        # if anchor_face.mode == "RGB":
-        #     anchor_face = anchor_face.convert('L')
-        # if positive_face.mode == "RGB":
-        #     positive_face = positive.convert('L')
-        # if negative_face.mode == "RGB":
-        #     negative_face = negative_face.convert('L')
+        anchor_face = Image.open(anchor_face).convert('RGB')
+        positive_face = Image.open(positive_face).convert('RGB')
+        negative_face = Image.open(negative_face).convert('RGB')
 
         if self.transform is not None:
             anchor_face = self.transform(anchor_face)
@@ -130,22 +110,9 @@ class triSoftTrainDataset(Dataset):
                 negative_face = negative + '/' + negative_folder[negative_id]
                 break
 
-        anchor_face = Image.open(anchor_face)
-        positive_face = Image.open(positive_face)
-        negative_face = Image.open(negative_face)
-
-        if anchor_face.mode != "RGB":
-            origin = anchor_face
-            anchor_face = Image.new("RGB", origin.size)
-            anchor_face.paste(origin)
-        if positive_face.mode != "RGB":
-            origin = positive_face
-            positive_face = Image.new("RGB", origin.size)
-            positive_face.paste(origin)
-        if negative_face.mode != "RGB":
-            origin = negative_face
-            negative_face = Image.new("RGB", origin.size)
-            negative_face.paste(origin)
+        anchor_face = Image.open(anchor_face).convert('RGB')
+        positive_face = Image.open(positive_face).convert('RGB')
+        negative_face = Image.open(negative_face).convert('RGB')
 
         if self.transform is not None:
             anchor_face = self.transform(anchor_face)
@@ -197,17 +164,8 @@ class contrasTrainDataset(Dataset):
                     img1_face = img1 + '/' + img1_folder[img1_id]
                     break
 
-        img0_face = Image.open(img0_face)
-        img1_face = Image.open(img1_face)
-
-        if img0_face.mode != "RGB":
-            origin = img0_face
-            img0_face = Image.new("RGB", origin.size)
-            img0_face.paste(origin)
-        if img1_face.mode != "RGB":
-            origin = img1_face
-            img1_face = Image.new("RGB", origin.size)
-            img1_face.paste(origin)
+        img0_face = Image.open(img0_face).convert('RGB')
+        img1_face = Image.open(img1_face).convert('RGB')
 
         if self.transform is not None:
             img0_face = self.transform(img0_face)
@@ -227,12 +185,7 @@ class testDataset(Dataset):
 
     def __getitem__(self, index):
         face_path, label = self.samples[index]
-        face_test = Image.open(face_path)
-
-        if face_test.mode != "RGB":
-            origin = face_test
-            face_test = Image.new("RGB", origin.size)
-            face_test.paste(origin)
+        face_test = Image.open(face_path).convert('RGB')
             
         if self.transform is not None:
             face_test = self.transform(face_test)
